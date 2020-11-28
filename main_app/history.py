@@ -4,6 +4,7 @@ from redis import Redis
 
 r = Redis()
 current_offset = 0
+# temperature URL: /printer/heads/{head_id}/extruders/{extruder_id}/hotend/temperature
 # xerox_ip = '10.99.4.48'
 xerox_url = "http://localhost:5502/history/print_jobs"
 # gutenberg_ip = 'http://gutenberg.cslab.moravian.edu/api/v1/history/print_jobs'
