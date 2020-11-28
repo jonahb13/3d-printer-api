@@ -2,7 +2,7 @@ import requests
 from pprint import pprint
 
 def request_info(url, params):
-    response = requests.get(url, params)
+    response = requests.get(url, params=params)
     response.raise_for_status()
     data = response.json()
     pprint(data)
