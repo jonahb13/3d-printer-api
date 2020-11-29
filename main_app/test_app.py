@@ -17,17 +17,17 @@ def reset_redis():
 
 def test_app_returns_print_job_when_gutenberg_is_printing():
     job = {
-            "datetime_cleaned": "2020-10-25T18:30:41",
-            "datetime_finished": "2020-10-25T18:29:13",
-            "datetime_started": "2020-10-25T18:22:39",
-            "name": "UM3E_BAT_Cookie_cutter_rgproduct_Heidi",
-            "reprint_original_uuid": None,
-            "result": "Aborted",
-            "source": "WEB_API/Unknown/Cura connect",
-            "time_elapsed": 25.502346,
-            "time_estimated": 0,
-            "time_total": 0,
-            "uuid": "3178a7c4-87e2-481d-8aa7-5a2d074d0e43"
+        "datetime_cleaned": "2020-10-25T18:30:41",
+        "datetime_finished": "2020-10-25T18:29:13",
+        "datetime_started": "2020-10-25T18:22:39",
+        "name": "UM3E_BAT_Cookie_cutter_rgproduct_Heidi",
+        "reprint_original_uuid": None,
+        "result": "Aborted",
+        "source": "WEB_API/Unknown/Cura connect",
+        "time_elapsed": 25.502346,
+        "time_estimated": 0,
+        "time_total": 0,
+        "uuid": "3178a7c4-87e2-481d-8aa7-5a2d074d0e43"
     }
 
     app_ = app.create_app("test_", lambda url: 'printing')
@@ -48,17 +48,17 @@ def test_app_returns_print_job_when_gutenberg_is_printing():
 
 def test_app_returns_print_job_when_xerox_is_printing():
     job = {
-            "datetime_cleaned": "2020-10-25T18:30:41",
-            "datetime_finished": "2020-10-25T18:29:13",
-            "datetime_started": "2020-10-25T18:22:39",
-            "name": "UM3E_BAT_Cookie_cutter_rgproduct_Heidi",
-            "reprint_original_uuid": None,
-            "result": "Aborted",
-            "source": "WEB_API/Unknown/Cura connect",
-            "time_elapsed": 25.502346,
-            "time_estimated": 0,
-            "time_total": 0,
-            "uuid": "3178a7c4-87e2-481d-8aa7-5a2d074d0e43"
+        "datetime_cleaned": "2020-10-25T18:30:41",
+        "datetime_finished": "2020-10-25T18:29:13",
+        "datetime_started": "2020-10-25T18:22:39",
+        "name": "UM3E_BAT_Cookie_cutter_rgproduct_Heidi",
+        "reprint_original_uuid": None,
+        "result": "Aborted",
+        "source": "WEB_API/Unknown/Cura connect",
+        "time_elapsed": 25.502346,
+        "time_estimated": 0,
+        "time_total": 0,
+        "uuid": "3178a7c4-87e2-481d-8aa7-5a2d074d0e43"
     }
 
     app_ = app.create_app("test_", lambda url: 'printing')
