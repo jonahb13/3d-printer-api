@@ -15,23 +15,23 @@ def get_status(url):
     return data['status']
 
 
-def create_app():
+def create_app(test='', get_status=get_status):  # Test is 'test' when running pytests, otherwise empty string
     r = Redis()
     app = Flask(__name__)
 
     def get_job(printer_name):
         status = get_status(gutenberg_url if printer_name == 'gutenberg' else xerox_url)
         if status == 'printing':
-            job = json.loads(r.lindex(printer_name + '_history', -1))
-            job['nozzle_1'] = float(r.lindex(printer_name + '_nozzle_1_temps', -1))
-            job['nozzle_2'] = float(r.lindex(printer_name + '_nozzle_2_temps', -1))
+            job = json.loads(r.lindex(test + printer_name + '_history', -1))
+            job['nozzle_1'] = float(r.lindex(test + printer_name + '_nozzle_1_temps', -1))
+            job['nozzle_2'] = float(r.lindex(test + printer_name + '_nozzle_2_temps', -1))
             return job
         else:
             return {printer_name: printer_name + ' is not currently printing'}
 
     def get_temps(printer_name):
-        nozzle_1 = r.lrange(printer_name + '_nozzle_1_temps', 0, -1)
-        nozzle_2 = r.lrange(printer_name + '_nozzle_2_temps', 0, -1)
+        nozzle_1 = r.lrange(test + printer_name + '_nozzle_1_temps', 0, -1)
+        nozzle_2 = r.lrange(test + printer_name + '_nozzle_2_temps', 0, -1)
         nozzle_1 = list(map(float, nozzle_1))
         nozzle_2 = list(map(float, nozzle_2))
         return nozzle_1, nozzle_2

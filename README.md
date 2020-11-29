@@ -13,7 +13,7 @@ API Documentation:
 	* `python3 -m venv .venv`
 	* `source .venv/bin/activate`
 * Download required packages for the flask server
-	* `pip install -r requirements.txt`
+	* `pip3 install -r requirements.txt`
 
 ### Running the Server
 * Open 4 separate terminal windows (all in the `3DPrinterFlaskAPI` directory)
