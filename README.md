@@ -1,9 +1,7 @@
 # 3dPrinterFlaskAPI
 
 ### Description
-Flask server that communicates with mock 3D printer flask servers: one for "Gutenberg" and one for "Xerox". Currently gets "current jobs" from both printers and the printers' nozzle temperatures, and stores this information in a redis database. 
-
-API Documentation: 
+Flask server that exposes information from multiple endpoints in mock 3D printer flask servers: one server called "Gutenberg" and one called "Xerox". Collector communicates with "Gutenberg" and "Xerox" to get their current print job and the nozzle temperatures, and stores this information in a redis database. Current endpoints on the Flask server are '/current_job' and '/nozzle_temps'.
 
 ### Setup
 * Copy repository link and clone in terminal
@@ -15,17 +13,17 @@ API Documentation:
 * Download required packages for the flask server
 	* `pip3 install -r requirements.txt`
 
-### Running the Server
-* Open 4 separate terminal windows (all in the `3DPrinterFlaskAPI` directory)
+### Running the Servers
+* Open 5 separate terminal windows (all in the `3DPrinterFlaskAPI` directory)
 	* In the first terminal, start the redis server
 		* `redis-server`
 	* In the second terminal, run the flask server for Gutenberg
-		* `python3 printer_server/gutenberg.py`
+		* `python3 printer_server/gutenberg_app.py`
 	* In the third terminal, run the flask server for Xerox
-		* `python3 printer_server/gutenberg.py`
+		* `python3 printer_server/xerox_app.py`
 	* In the fourth terminal, start the main flask app
 		* `python3 main_app/app.py`
-* Once the 3D Printer servers and main app server are running, run the client
+* Once the 3D Printer servers and main app server are running, run the client in the fifth terminal 
 	* `python3 app_client/printer_stats.py`
 
 ### Future Work
