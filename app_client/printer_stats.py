@@ -22,32 +22,32 @@ def request_temps(params):
 def main():
     # Get both printers' current jobs
     params = {'printer': None}
-    print('Getting the current job for both printers:')
+    print('\nGetting the current job for both printers:')
     request_current_job(params)
 
     # Get Gutenberg's current job
     params = {'printer': 'gutenberg'}
-    print('Getting the current job for Gutenberg:')
+    print('\nGetting the current job for Gutenberg:')
     request_current_job(params)
 
     # Get Xerox's current job
     params = {'printer': 'xerox'}
-    print('Getting the current job for Xerox:')
+    print('\nGetting the current job for Xerox:')
     request_current_job(params)
     
     # Get both printers' past temps
     params = {'printer': None}
-    print('Getting all the past temperatures for both printers')
+    print('\nGetting all the past temperatures for both printers')
     request_temps(params)
 
     # Get Gutenberg's past temps
     params = {'printer': 'gutenberg'}
-    print('Getting all the past temperatures for gutenberg')
+    print('\nGetting all the past temperatures for gutenberg')
     request_temps(params)
 
     # Get Xerox's past temps
     params = {'printer': 'xerox'}
-    print('Getting all the past temperatures for xerox')
+    print('\nGetting all the past temperatures for xerox')
     request_temps(params)
 
 
